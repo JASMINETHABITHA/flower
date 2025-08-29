@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Tracer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet"> <!-- Calligraphy font -->
+    <style>
+        body {
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/784/741/214/scripture-write-wallpaper-thumb.jpg');
+            background-size: cover;
+            color: white; /* Text color set to white */
+            font-family: 'Great Vibes', cursive; /* Calligraphy font */
+            text-align: center;
+            padding: 50px;
+        }
+        .checklist {
+            list-style-type: none;
+            padding: 0;
+        }
+        .checklist li {
+            margin: 10px 0;
+            font-size: 1em; /* Set font size to 15px */
+        }
+        h1 {
+            font-size: 3em; /* Increase heading size */
+        }
+        h2 {
+            font-size: 2.5em; /* Section title size */
+        }
+        p {
+            font-size: 1.5em; /* Increase paragraph size */
+        }
+        .section-title {
+            font-size: 2.5em;
+            margin: 20px 0;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px; /* Height of the border */
+            background: url('https://example.com/flower-border.png') repeat-x; /* Replace with your flower border image */
+            position: absolute;
+            bottom: -10px; /* Positioning the border */
+            left: 0;
+        }
+        .version-input {
+            margin: 20px 0;
+            font-size: 1.2em; /* Font size for version input */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Bible Tracer</h1>
+
+    <input type="text" class="version-input" placeholder="Enter Version Name (e.g., NIV, KJV)" />
+
+    <h2 class="section-title">Old Testament</h2>
+    <ul class="checklist">
+        <li><input type="checkbox" id="genesis" onclick="openChapters('Genesis')"> <label for="genesis">Genesis</label></li>
+        <li><input type="checkbox" id="exodus" onclick="openChapters('Exodus')"> <label for="exodus">Exodus</label></li>
+        <li><input type="checkbox" id="leviticus" onclick="openChapters('Leviticus')"> <label for="leviticus">Leviticus</label></li>
+        <li><input type="checkbox" id="numbers" onclick="openChapters('Numbers')"> <label for="numbers">Numbers</label></li>
+        <li><input type="checkbox" id="deuteronomy" onclick="openChapters('Deuteronomy')"> <label for="deuteronomy">Deuteronomy</label></li>
+        <li><input type="checkbox" id="joshua" onclick="openChapters('Joshua')"> <label for="joshua">Joshua</label></li>
+        <li><input type="checkbox" id="judges" onclick="openChapters('Judges')"> <label for="judges">Judges</label></li>
+        <li><input type="checkbox" id="ruth" onclick="openChapters('Ruth')"> <label for="ruth">Ruth</label></li>
+        <li><input type="checkbox" id="1samuel" onclick="openChapters('1 Samuel')"> <label for="1samuel">1 Samuel</label></li>
+        <li><input type="checkbox" id="2samuel" onclick="openChapters('2 Samuel')"> <label for="2samuel">2 Samuel</label></li>
+        <li><input type="checkbox" id="1kings" onclick="openChapters('1 Kings')"> <label for="1kings">1 Kings</label></li>
+        <li><input type="checkbox" id="2kings" onclick="openChapters('2 Kings')"> <label for="2kings">2 Kings</label></li>
+        <li><input type="checkbox" id="1chronicles" onclick="openChapters('1 Chronicles')"> <label for="1chronicles">1 Chronicles</label></li>
+        <li><input type="checkbox" id="2chronicles" onclick="openChapters('2 Chronicles')"> <label for="2chronicles">2 Chronicles</label></li>
+        <li><input type="checkbox" id="ezra" onclick="openChapters('Ezra')"> <label for="ezra">Ezra</label></li>
+        <li><input type="checkbox" id="nehemiah" onclick="openChapters('Nehemiah')"> <label for="nehemiah">Nehemiah</label></li>
+        <li><input type="checkbox" id="esther" onclick="openChapters('Esther')"> <label for="esther">Esther</label></li>
+        <li><input type="checkbox" id="job" onclick="openChapters('Job')"> <label for="job">Job</label></li>
+        <li><input type="checkbox" id="psalms" onclick="openChapters('Psalms')"> <label for="psalms">Psalms</label></li>
+        <li><input type="checkbox" id="proverbs" onclick="openChapters('Proverbs')"> <label for="proverbs">Proverbs</label></li>
+        <li><input type="checkbox" id="ecclesiastes" onclick="openChapters('Ecclesiastes')"> <label for="ecclesiastes">Ecclesiastes</label></li>
+        <li><input type="checkbox" id="songofsolomon" onclick="openChapters('Song of Solomon')"> <label for="songofsolomon">Song of Solomon</label></li>
+        <li><input type="checkbox" id="isaiah" onclick="openChapters('Isaiah')"> <label for="isaiah">Isaiah</label></li>
+        <li><input type="checkbox" id="jeremiah" onclick="openChapters('Jeremiah')"> <label for="jeremiah">Jeremiah</label></li>
+        <li><input type="checkbox" id="lamentations" onclick="openChapters('Lamentations')"> <label for="lamentations">Lamentations</label></li>
+        <li><input type="checkbox" id="ezekiel" onclick="openChapters('Ezekiel')"> <label for="ezekiel">Ezekiel</label></li>
+        <li><input type="checkbox" id="daniel" onclick="openChapters('Daniel')"> <label for="daniel">Daniel</label></li>
+        <li><input type="checkbox" id="hosea" onclick="openChapters('Hosea')"> <label for="hosea">Hosea</label></li>
+        <li><input type="checkbox" id="joel" onclick="openChapters('Joel')"> <label for="joel">Joel</label></li>
+        <li><input type="checkbox" id="amos" onclick="openChapters('Amos')"> <label for="amos">Amos</label></li>
+        <li><input type="checkbox" id="obadiah" onclick="openChapters('Obadiah')"> <label for="obadiah">Obadiah</label></li>
+        <li><input type="checkbox" id="jonah" onclick="openChapters('Jonah')"> <label for="jonah">Jonah</label></li>
+        <li><input type="checkbox" id="micah" onclick="openChapters('Micah')"> <label for="micah">Micah</label></li>
+        <li><input type="checkbox" id="nahum" onclick="openChapters('Nahum')"> <label for="nahum">Nahum</label></li>
+        <li><input type="checkbox" id="habakkuk" onclick="openChapters('Habakkuk')"> <label for="habakkuk">Habakkuk</label></li>
+        <li><input type="checkbox" id="zephaniah" onclick="openChapters('Zephaniah')"> <label for="zephaniah">Zephaniah</label></li>
+        <li><input type="checkbox" id="haggai" onclick="openChapters('Haggai')"> <label for="haggai">Haggai</label></li>
+        <li><input type="checkbox" id="zechariah" onclick="openChapters('Zechariah')"> <label for="zechariah">Zechariah</label></li>
+        <li><input type="checkbox" id="malachi" onclick="openChapters('Malachi')"> <label for="malachi">Malachi</label></li>
+    </ul>
+
+    <h2 class="section-title">New Testament</h2>
+    <ul class="checklist">
+        <li><input type="checkbox" id="matthew" onclick="openChapters('Matthew')"> <label for="matthew">Matthew</label></li>
+        <li><input type="checkbox" id="mark" onclick="openChapters('Mark')"> <label for="mark">Mark</label></li>
+        <li><input type="checkbox" id="luke" onclick="openChapters('Luke')"> <label for="luke">Luke</label></li>
+        <li><input type="checkbox" id="john" onclick="openChapters('John')"> <label for="john">John</label></li>
+        <li><input type="checkbox" id="acts" onclick="openChapters('Acts')"> <label for="acts">Acts</label></li>
+        <li><input type="checkbox" id="romans" onclick="openChapters('Romans')"> <label for="romans">Romans</label></li>
+        <li><input type="checkbox" id="1corinthians" onclick="openChapters('1 Corinthians')"> <label for="1corinthians">1 Corinthians</label></li>
+        <li><input type="checkbox" id="2corinthians" onclick="openChapters('2 Corinthians')"> <label for="2corinthians">2 Corinthians</label></li>
+        <li><input type="checkbox" id="galatians" onclick="openChapters('Galatians')"> <label for="galatians">Galatians</label></li>
+        <li><input type="checkbox" id="ephesians" onclick="openChapters('Ephesians')"> <label for="ephesians">Ephesians</label></li>
+        <li><input type="checkbox" id="philippians" onclick="openChapters('Philippians')"> <label for="philippians">Philippians</label></li>
+        <li><input type="checkbox" id="colossians" onclick="openChapters('Colossians')"> <label for="colossians">Colossians</label></li>
+        <li><input type="checkbox" id="1thessalonians" onclick="openChapters('1 Thessalonians')"> <label for="1thessalonians">1 Thessalonians</label></li>
+        <li><input type="checkbox" id="2thessalonians" onclick="openChapters('2 Thessalonians')"> <label for="2thessalonians">2 Thessalonians</label></li>
+        <li><input type="checkbox" id="1timothy" onclick="openChapters('1 Timothy')"> <label for="1timothy">1 Timothy</label></li>
+        <li><input type="checkbox" id="2timothy" onclick="openChapters('2 Timothy')"> <label for="2timothy">2 Timothy</label></li>
+        <li><input type="checkbox" id="titus" onclick="openChapters('Titus')"> <label for="titus">Titus</label></li>
+        <li><input type="checkbox" id="philemon" onclick="openChapters('Philemon')"> <label for="philemon">Philemon</label></li>
+        <li><input type="checkbox" id="hebrews" onclick="openChapters('Hebrews')"> <label for="hebrews">Hebrews</label></li>
+        <li><input type="checkbox" id="james" onclick="openChapters('James')"> <label for="james">James</label></li>
+        <li><input type="checkbox" id="1peter" onclick="openChapters('1 Peter')"> <label for="1peter">1 Peter</label></li>
+        <li><input type="checkbox" id="2peter" onclick="openChapters('2 Peter')"> <label for="2peter">2 Peter</label></li>
+        <li><input type="checkbox" id="1john" onclick="openChapters('1 John')"> <label for="1john">1 John</label></li>
+        <li><input type="checkbox" id="2john" onclick="openChapters('2 John')"> <label for="2john">2 John</label></li>
+        <li><input type="checkbox" id="3john" onclick="openChapters('3 John')"> <label for="3john">3 John</label></li>
+        <li><input type="checkbox" id="jude" onclick="openChapters('Jude')"> <label for="jude">Jude</label></li>
+        <li><input type="checkbox" id="revelation" onclick="openChapters('Revelation')"> <label for="revelation">Revelation</label></li>
+    </ul>
+
+    <script>
+        function openChapters(book) {
+            alert("Opening chapters for " + book + ": 1-50"); // Example alert, replace with actual navigation
+            // You can redirect to another page or display chapters dynamically here
+        }
+    </script>
+</body>
+</html>
